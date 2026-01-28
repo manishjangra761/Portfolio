@@ -7,26 +7,48 @@ import { fadeIn } from "../variants";
 import { Link } from "react-scroll";
 import PopUps from "./PopUps";
 
+// const services = [
+//   {
+//     name: "FrontEnd",
+//     description:
+//       "I can create interactive web pages using languages like <span class='text-lg font-bold text-blue-500'>HTML</span>, <span class='text-lg font-bold text-blue-500'>CSS</span>,<span class='text-lg font-bold text-blue-500'>Tailwind CSS</span>, <span class='text-lg font-bold text-blue-500'>JavaScript</span>, <span class='text-lg font-bold text-blue-500'>ReactJS</span>,and <span class='text-lg font-bold text-blue-500'>Redux</span>.",
+//       icon: RiReactjsFill,
+//   },
+//   {
+//     name: "Backend",
+//     description:
+//       "I can write backend logic using JavaScript libraries such as <span class='text-lg font-bold text-green-500'>NodeJs</span> and <span class='text-lg font-bold text-green-500'>ExpressJS</span>.",
+//     icon: FaNodeJs,
+//   },
+//   {
+//     name: "DataBase",
+//     description:
+//       "I can interact with databases using languages like <span class='text-lg font-bold text-yellow-500'>SQL</span>, <span class='text-lg font-bold text-yellow-500'>MySQL</span>, <span class='text-lg font-bold text-yellow-500'>PostgreSQL</span>, and <span class='text-lg font-bold text-yellow-500'>MongoDB</span>.",
+//     icon: SiMongodb,
+//   },
+// ];
+
 const services = [
   {
-    name: "FrontEnd",
+    name: "Frontend Development",
     description:
-      "I can create interactive web pages using languages like <span class='text-lg font-bold text-blue-500'>HTML</span>, <span class='text-lg font-bold text-blue-500'>CSS</span>,<span class='text-lg font-bold text-blue-500'>Tailwind CSS</span>, <span class='text-lg font-bold text-blue-500'>JavaScript</span>, <span class='text-lg font-bold text-blue-500'>ReactJS</span>,and <span class='text-lg font-bold text-blue-500'>Redux</span>.",
-      icon: RiReactjsFill,
+      "Building responsive and interactive UIs using <span class='font-bold text-blue-500'>React.js</span>, <span class='font-bold text-blue-500'>Tailwind CSS</span>, <span class='font-bold text-blue-500'>JavaScript</span>, and reusable component architecture.",
+    icon: RiReactjsFill,
   },
   {
-    name: "Backend",
+    name: "Backend Development",
     description:
-      "I can write backend logic using JavaScript libraries such as <span class='text-lg font-bold text-green-500'>NodeJs</span> and <span class='text-lg font-bold text-green-500'>ExpressJS</span>.",
+      "Developing scalable backend services with <span class='font-bold text-green-500'>Node.js</span>, <span class='font-bold text-green-500'>Express.js</span>, JWT authentication, RBAC, and REST APIs.",
     icon: FaNodeJs,
   },
   {
-    name: "DataBase",
+    name: "Database & APIs",
     description:
-      "I can interact with databases using languages like <span class='text-lg font-bold text-yellow-500'>SQL</span>, <span class='text-lg font-bold text-yellow-500'>MySQL</span>, and <span class='text-lg font-bold text-yellow-500'>MongoDB</span>.",
+      "Designing optimized schemas using <span class='font-bold text-yellow-500'>MySQL</span>, <span class='font-bold text-yellow-500'>MongoDB</span>, <span class='font-bold text-yellow-500'>PostgreSQL</span>, and <span class='font-bold text-yellow-500'>Sequelize ORM</span> for secure and scalable applications.",
     icon: SiMongodb,
   },
 ];
+
 
 const Services = () => {
   // state to see 
@@ -49,8 +71,7 @@ const Services = () => {
           >
             <h2 className="h2 text-accent mb-6 ">What I do</h2>
             <h3 className="h3 max-w-[455px] mb-16 ">
-              I am currently enhancing my skills by working on projects using
-              ReactJS and NodeJS to build dynamic applications.
+              I build full-stack applications with secure authentication, optimized APIs, and scalable databases.
             </h3>
             <Link to="https://github.com/manishjangra761">
               <button

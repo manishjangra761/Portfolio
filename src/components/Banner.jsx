@@ -36,18 +36,18 @@ const Banner = () => {
               <TypeAnimation
                 sequence={[
                   "Frontend",
-                  2000,
+                  600,
                   "Backend",
-                  2000,
+                  600,
                   "FullStack",
-                  2000,
+                  600,
                 ]}
-                speed={50}
+                speed={40}
                 className="text-accent"
                 wrapper="span"
                 repeat={Infinity}
               />
-              <br/>Developer
+              <br />Developer
             </motion.div>
             {/* Description */}
             <motion.p
@@ -57,12 +57,11 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              I’m skilled in HTML, CSS, JavaScript, React.js, Node.js,
-              Express.js and MongoDB along with Core Java. With hands-on
-              experience from projects like a Canvas Craft website and an
-              E-commerce Website etc. I’m eager to deepen my knowledge and
-              contribute to innovative tech solutions.
+              Full Stack Developer with experience building scalable MERN stack applications.
+              I work with React.js, Node.js, Express.js, MySQL, MongoDB, Sequelize ORM and REST APIs.
+              Currently contributing to a multi-tenant education platform at Qvolv Technologies and previously delivered production systems across multiple ONDC domains at SequelString AI.
             </motion.p>
+
             <motion.div
               variants={fadeIn("up", 0.6)}
               initial="hidden"
@@ -73,7 +72,7 @@ const Banner = () => {
               <Link smooth={true} spy={true} to="contact">
                 <button className="btn btn-lg">Contact me</button>
               </Link>
-             
+
             </motion.div>
             {/* social media icons */}
             <motion.div
@@ -94,7 +93,7 @@ const Banner = () => {
               </a>
             </motion.div>
           </div>
-        {/* Manish Image */}
+          {/* Manish Image */}
           <motion.div
             variants={fadeIn("down", 0.5)}
             initial="hidden"

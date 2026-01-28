@@ -47,12 +47,13 @@ const Contact = () => {
           >
             <div>
               <h2 className="text-[45px] lg:text-[90px] text-accent leading-none mb-8">
-                Get in <br />  touch
+                 “Let’s build something amazing together.”
               </h2>
               <h4 className="text-2xl uppercase  font-medium mb-2 tracking-wide">
-                Let's Work together!
+                “Email me for full case studies.”
               </h4>
             </div>
+          
           </motion.div>
           {/* contact form */}
           <motion.form
@@ -61,7 +62,7 @@ const Contact = () => {
             variants={fadeIn("left", 0.3)}
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 border-2 border-black rounded-2xl flex flex-col gap-y-6 pb-12 p-6 items-start "
+            className="flex-1 border-2 border-black rounded-2xl flex flex-col gap-y-6 pb-12 p-6 items-start bg-white/25 backdrop-blur-xl shadow-xl"
           > 
             <input
               className="bg-transparent border-b-2 border-black py-3 outline-none w-full focus:border-accent transition-all"

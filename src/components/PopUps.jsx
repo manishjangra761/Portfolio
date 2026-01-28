@@ -6,20 +6,24 @@ import { FaRegWindowClose } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const PopUps = ({ setShowPopup }) => {
-  let datas = [
-    {
-      link: Img1,
-      heading: "Ecommerce Website",
-    },
-    {
-      link: Img2,
-      heading: "Canvas Craft",
-    },
-    {
-      link: Img3,
-      heading: "Portfolio",
-    },
-  ];
+ let datas = [
+  {
+    link: Img1,
+    heading: "Ecommerce Website",
+    detail: "HTML, CSS, JS ecommerce platform with authentication and local storage."
+  },
+  {
+    link: Img2,
+    heading: "Canvas Craft",
+    detail: "Interactive drawing canvas with shapes, colors, eraser, and image export."
+  },
+  {
+    link: Img3,
+    heading: "Portfolio Website",
+    detail: "React + Tailwind + Framer Motion personal portfolio."
+  },
+];
+
 
   return (
     <div className="absolute h-full w-full  flex justify-center items-center backdrop-blur-[3px]">
