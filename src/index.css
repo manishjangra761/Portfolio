@@ -2,79 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap');
 
-body{
+:root {
+  --surface: #0a0f1a;
+  --panel: #0f172a;
+  --ink: #e2e8f0;
+  --muted: #94a3b8;
+  --border: #1f2937;
+  --accent: #38bdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background: radial-gradient(circle at 18% 20%, rgba(56, 189, 248, 0.08), transparent 28%),
+    radial-gradient(circle at 80% 16%, rgba(14, 165, 233, 0.06), transparent 26%),
+    linear-gradient(135deg, #0b1220, #0c1424 45%, #0a101a);
+  color: var(--ink);
+  font-family: 'Instrument Sans', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 
-.btn{
-  background: linear-gradient(135deg, #4e8eff, #6cafff);
+.btn {
+  background: linear-gradient(120deg, #0ea5e9, #06b6d4);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 16px;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid #0ea5e9;
+  border-radius: 9999px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  transition: all 0.3s ease;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 12px 32px rgba(14, 165, 233, 0.28);
 }
-
 
 .btn:hover {
-  background: linear-gradient(135deg, #4e8bd6, #1f5fce);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 38px rgba(14, 165, 233, 0.26);
+  transform: translateY(-1px);
 }
 
-
-.active {
-  color: #fff;
-  padding-left: 0.36rem;
-  border-radius: 100%;
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid #1f2937;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
 }
 
-.gradient,
-.active {
-  background: linear-gradient(
-    92.23deg,
-    #406aff 21.43%,
-    #3bace2 50.63%,
-    #b936ee 100%,
-    #ff56f6 117.04%
-  );
+.btn-secondary:hover {
+  border-color: #38bdf8;
+  color: #e2e8f0;
+  box-shadow: 0 12px 32px rgba(56, 189, 248, 0.25);
 }
 
+.nav-active {
+  color: #e2e8f0;
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.4);
+}
 
 @layer base {
   body {
-    @apply font-secondary text-lg leading-8 text-white;
+    @apply text-base leading-7 text-slate-100;
   }
   .h2 {
-    @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
+    @apply font-primary text-[28px] md:text-[34px] mb-3 tracking-tight text-slate-50;
   }
   .h3 {
-    @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
-  }
-  .btn {
-    @apply font-primary text-white font-medium;
-  }
-  .btn-sm {
-    @apply h-[48px] px-6 text-sm;
-  }
-  .btn-lg {
-    @apply h-[56px] px-10 text-base;
-  }
-  .btn-link {
-    @apply text-base;
-  }
-  .text-gradient {
-    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#42A6E3] to-[#FF56F6] font-bold font-primary hover:from-[#FF56F6] hover:to-[#42A6E3];
+    @apply font-primary font-semibold text-[22px] md:text-[26px] mb-3 leading-[1.4] text-slate-50;
   }
   .section {
-    @apply py-8 lg:py-24 lg:h-screen flex items-center;
+    @apply py-16 lg:py-24;
+    scroll-margin-top: 96px;
   }
 }
 

@@ -3,9 +3,9 @@ module.exports = {
   
   theme: {
     fontFamily: {
-      primary: 'Orbitron',
-      secondary: 'Rajdhani',
-      tertiary: 'Aldrich',
+      primary: '"Space Grotesk", sans-serif',
+      secondary: '"Instrument Sans", sans-serif',
+      tertiary: '"Space Grotesk", sans-serif',
     },
     container: {
       padding: {
@@ -21,8 +21,8 @@ module.exports = {
     extend: {
       
       colors: {
-        primary: '#0a0a0a',
-        accent: '#0073b1',
+        primary: '#0f172a',
+        accent: '#0ea5e9',
       },
       
       backgroundImage: {

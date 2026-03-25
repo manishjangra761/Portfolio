@@ -5,6 +5,14 @@ import { fadeIn } from "../variants";
 import SuccessMsg from "./SuccessMsg";
 import ErrorMsg from "./ErrorMsg";
 
+const quickContacts = [
+  { label: "Email", value: "manishjangra761@gmail.com", href: "mailto:manishjangra761@gmail.com" },
+  { label: "Phone", value: "+91 9817558402", href: "tel:+919817558402" },
+  { label: "LinkedIn", value: "linkedin.com/in/manishjangra2002", href: "https://www.linkedin.com/in/manishjangra2002" },
+  { label: "GitHub", value: "github.com/manishjangra761", href: "https://github.com/manishjangra761" },
+  { label: "Availability", value: "Consulting & full-time roles" },
+];
+
 const Contact = () => {
   const form = useRef();
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -34,67 +42,95 @@ const Contact = () => {
   };
 
   return (
-    <section className="lg:section lg:h-[96vh]  py-16 overflow-hidden text-black" id="contact">
-      <div className="container mx-auto">
-        {/* text */}
-        <div className="flex flex-col lg:flex-row">
+    <section className="section" id="contact">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex flex-col lg:flex-row gap-10">
           <motion.div
-            variants={fadeIn("right", 0.3)}
+            variants={fadeIn("right", 0.2)}
             initial="hidden"
-            whileInView={"show"}
+            whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 flex justify-start items-center"
+            className="flex-1 flex flex-col justify-center gap-5"
           >
-            <div>
-              <h2 className="text-[45px] lg:text-[90px] text-accent leading-none mb-8">
-                 “Let’s build something amazing together.”
-              </h2>
-              <h4 className="text-2xl uppercase  font-medium mb-2 tracking-wide">
-                “Email me for full case studies.”
-              </h4>
+            <p className="text-sm uppercase tracking-[0.18em] text-slate-400 font-semibold">Contact</p>
+            <h2 className="h2">Let's plan your next release.</h2>
+            <p className="text-lg text-slate-200 max-w-xl leading-8">
+              Share a sentence about your product, the metric to move, or the constraint you have. I'll reply with a short
+              plan and timelines.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3 max-w-xl">
+              {quickContacts.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-slate-800 bg-[#0f172a]/90 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
+                >
+                  <p className="text-xs uppercase tracking-[0.14em] text-slate-400">{item.label}</p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                      className="text-sm font-semibold text-slate-50 hover:text-sky-300 break-words"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-sm font-semibold text-slate-50">{item.value}</p>
+                  )}
+                </div>
+              ))}
             </div>
-          
           </motion.div>
-          {/* contact form */}
+
           <motion.form
             ref={form}
             onSubmit={sendEmail}
-            variants={fadeIn("left", 0.3)}
-            whileInView={"show"}
+            variants={fadeIn("left", 0.2)}
+            whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 border-2 border-black rounded-2xl flex flex-col gap-y-6 pb-12 p-6 items-start bg-white/25 backdrop-blur-xl shadow-xl"
-          > 
-            <input
-              className="bg-transparent border-b-2 border-black py-3 outline-none w-full focus:border-accent transition-all"
-              type="text"
-              placeholder="Your Name"
-              name="user_name"
-              required
-            />
-            <input
-              className="bg-transparent border-b-2 border-black py-3 outline-none w-full focus:border-accent transition-all"
-              type="email"
-              placeholder="Your Email"
-              name="user_email"
-              required
-            />
-            <textarea
-              className="bg-transparent border-b-2 border-black  outline-none w-full focus:border-accent transition-all resize-none mb-4"
-              placeholder="Your Message"
-              name="message"
-              required
-            ></textarea>
-            <button className="btn btn-lg" type="submit">
-              Send
+            className="flex-1 rounded-2xl border border-slate-800 bg-[#0f172a]/90 p-6 shadow-[0_18px_48px_rgba(0,0,0,0.45)] flex flex-col gap-5"
+          >
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-slate-200" htmlFor="user_name">Name</label>
+              <input
+                className="w-full rounded-xl border border-slate-700 bg-[#0b1324] px-4 py-3 text-slate-100 outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-900 transition"
+                type="text"
+                placeholder="Your name"
+                name="user_name"
+                id="user_name"
+                required
+              />
+            </div>
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-slate-200" htmlFor="user_email">Email</label>
+              <input
+                className="w-full rounded-xl border border-slate-700 bg-[#0b1324] px-4 py-3 text-slate-100 outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-900 transition"
+                type="email"
+                placeholder="you@example.com"
+                name="user_email"
+                id="user_email"
+                required
+              />
+            </div>
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-slate-200" htmlFor="message">Project or idea</label>
+              <textarea
+                className="w-full rounded-xl border border-slate-700 bg-[#0b1324] px-4 py-3 text-slate-100 outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-900 transition resize-none min-h-[140px]"
+                placeholder="What problem are we solving?"
+                name="message"
+                id="message"
+                required
+              ></textarea>
+            </div>
+            <button className="btn h-12 px-6 text-base font-semibold self-start" type="submit">
+              Send message
             </button>
-            {/* set state to show error and success message */}
             {isSubmitted && !isError && <SuccessMsg />}
             {isSubmitted && isError && <ErrorMsg />}
           </motion.form>
         </div>
       </div>
     </section>
-
   );
 };
 

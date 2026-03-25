@@ -1,60 +1,66 @@
 import React from "react";
-import { BiHomeAlt, BiUser } from "react-icons/bi";
-import { BsClipboard, BsBriefcase, BsChatSquare } from "react-icons/bs";
 import { Link } from "react-scroll";
+
+const navLinks = [
+  { label: "Home", to: "home" },
+  { label: "About", to: "about" },
+  { label: "Experience", to: "experience" },
+  { label: "Skills", to: "skills" },
+  { label: "Projects", to: "work" },
+  { label: "Contact", to: "contact" },
+];
 
 const Nav = () => {
   return (
-    <nav className="fixed bottom-2 lg:bottom-8 w-full overflow-hidden z-50">
-      <div className="container mx-auto ">
-        <div className="w-full bg-white h-[40px] backdrop-blur-2*l rounded-full max-w-[460px] mx-auto px-5 flex justify-between items-center text-black">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0b1220]/85 backdrop-blur border-b border-slate-800/70">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="h-16 flex items-center justify-between gap-4 text-slate-100">
           <Link
             to="home"
-            activeClass='active'
-            smooth={true}
-            spy={true}
-            offset={-200}
-            className="cursor-pointer w-[30px] h-[30px] py-1.5"
+            smooth
+            spy
+            offset={-100}
+            className="font-bold text-lg tracking-tight cursor-pointer hover:text-sky-300"
+            aria-label="Go to hero"
           >
-            <BiHomeAlt />
+            Manish Jangra
           </Link>
-          <Link
-            to="about"
-            activeClass='active'
-            smooth={true}
-            spy={true}
-            offset={-5}
-            className="cursor-pointer w-[30px] h-[30px]  py-1.5"
-          >
-            <BiUser />
-          </Link>
-          <Link
-            to="service"
-            activeClass='active'
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[30px] h-[30px] py-1.5"
-          >
-            <BsClipboard />
-          </Link>
-          <Link
-            to="work"
-           activeClass='active'
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[30px] h-[30px] py-1.5"
-          >
-            <BsBriefcase />
-          </Link>
-          <Link
-            to="contact"
-            activeClass='active'
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[30px] h-[30px] py-1.5"
-          >
-            <BsChatSquare />
-          </Link>
+
+          <div className="hidden md:flex items-center gap-2 rounded-full bg-[#0f172a]/80 border border-slate-800 px-2 shadow-[0_10px_26px_rgba(0,0,0,0.35)]">
+            {navLinks.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                smooth
+                spy
+                offset={-100}
+                activeClass="nav-active"
+                className="cursor-pointer px-3 py-2 text-sm text-slate-300 rounded-full border border-transparent transition-all hover:text-white"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2">
+            <a
+              href="/ManishResume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-secondary h-10 px-4 text-sm font-semibold text-slate-100"
+            >
+              Resume
+            </a>
+            <Link
+              to="contact"
+              smooth
+              spy
+              offset={-100}
+              className="btn h-10 px-4 text-sm font-semibold"
+            >
+              Let&apos;s talk
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
