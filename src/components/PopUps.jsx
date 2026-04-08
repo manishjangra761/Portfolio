@@ -32,7 +32,11 @@ const PopUps = ({ setShowPopup }) => {
     animate={{ x: 0, scale: 1 }}  
     transition={{ type: "spring", stiffness: 100, damping: 20 }}
      className="absolute m-auto flex justify-center h-auto bg-opacity-10 w-full"> 
+<<<<<<< HEAD
         <div className="relative rounded-xl bg-gradient-to-r from-gray-600 to-[#fffcf7] text-black">
+=======
+      <div className="relative rounded-xl bg-gradient-to-r from-[#0f2a36] to-[#0c1f2c] text-slate-100 border border-white/10 shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+>>>>>>> master
     {/* close button */}
      <button
         className="absolute top-1.5 right-1.5 cursor-pointer text-2xl"
@@ -45,17 +49,30 @@ const PopUps = ({ setShowPopup }) => {
           <div className="relative">
             {/* map to dispalay projects */}
             {datas.map((data, i) => (
+<<<<<<< HEAD
               <div key={i} className="border-b-2 border-black rounded-xl px-2 my-4 mx-8 flex flex-row items-center">
+=======
+              <div key={i} className="border-b border-white/10 last:border-none rounded-xl px-2 my-4 mx-8 flex flex-row items-center">
+>>>>>>> master
                 <div className=" basis-1/3 lg:basis-1">
                   <img
                     className="max-w-[106px] m-auto py-2"
                     src={data.link}
                     alt="project"
+<<<<<<< HEAD
                   />
                 </div>
                 <div className="p-3">
                   <h2 className="font-semibold text-2xl">{data.heading}</h2>
                   <p>{data.detail}</p>
+=======
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-3">
+                  <h2 className="font-semibold text-2xl text-white">{data.heading}</h2>
+                  <p className="text-sm text-slate-200">{data.detail}</p>
+>>>>>>> master
                 </div>
               </div>
             ))}
